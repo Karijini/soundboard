@@ -46,7 +46,7 @@ if __name__ == '__main__':
             sound = message.strip('playSound:')
             snd1 = pygame.mixer.Sound('sounds/%s'%sound)
             channel = snd1.play()
-            channel.set_endevent(sound)
+            channel.set_endevent(15)
             socket.send("playSound:%s"%(sound))
         for event in pygame.event.get():
             print event
