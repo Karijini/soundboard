@@ -20,6 +20,7 @@ def list_sounds():
     return ','.join(sounds)
 
 if __name__ == '__main__':
+    pygame.init()
     pygame.mixer.init()
 
     port = 5555
@@ -44,5 +45,8 @@ if __name__ == '__main__':
         elif message.startswith("playSound:"):
             sound = message.strip('playSound:')
             snd1 = pygame.mixer.Sound('sounds/%s'%sound)
-            snd1.play()
+            channel = snd1.play()
+            channel.set_endevent(15)
             socket.send("playSound:%s"%(sound))
+        for event in pygame.event.get():
+            print event
