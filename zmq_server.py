@@ -20,7 +20,6 @@ def list_sounds():
     return ','.join(sounds)
 
 if __name__ == '__main__':
-    pygame.init()
     pygame.mixer.init()
 
     port = 5555
