@@ -23,7 +23,7 @@ if __name__ == '__main__':
     pygame.mixer.init()
 
     port = 5555
-    ip = '192.168.0.18'
+    ip = '*'
     if 'OPENSHIFT_PYTHON_IP' in os.environ:
         ip = os.environ.get('OPENSHIFT_PYTHON_IP')
     #ip = '54.88.2.59'
